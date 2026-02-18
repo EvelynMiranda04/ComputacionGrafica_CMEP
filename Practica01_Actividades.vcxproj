@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5f424881-f031-44ef-9bf7-a2634339be2a}</ProjectGuid>
-    <RootNamespace>EjP01</RootNamespace>
+    <ProjectGuid>{e483573b-1196-4ea8-b25e-1a572e365684}</ProjectGuid>
+    <RootNamespace>Practica01Actividades</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -140,7 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Mesh.cpp" />
-    <ClCompile Include="E01-317314975.cpp" />
+    <ClCompile Include="P01-317314975.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>

@@ -1,7 +1,18 @@
+// LIBRERIAS
 #include <stdio.h>
 #include <string.h>
 #include <glew.h>
 #include <glfw3.h>
+
+
+// CAMBIO 1: --------------------------------------------------
+#include <ctime>   // Para time()
+#include <cstdlib> // Para rand() y srand()
+// Variables para el control del tiempo y color
+float tiempoAnterior = 0.0f;
+float r = 1.0f, g = 1.0f, b = 1.0f; // Color inicial (Blanco)
+// ------------------------------------------------------------
+
 
 //Dimensiones de la ventana
 const int WIDTH = 800, HEIGHT = 800;
@@ -12,9 +23,7 @@ static const char* vShader = "                              \n\
 #version 330                                                \n\
 layout (location = 0) in vec3 pos;                          \n\
 void main()                                                 \n\
-{                                                           \n\
-    gl_Position = vec4(pos.x, pos.y, pos.z, 1.0f);          \n\
-}";
+{gl_Position = vec4(pos.x, pos.y, pos.z, 1.0f);}";
 
 // Fragment Shader con color blanco para las figuras
 //recibir Vcolor y dar de salida color
@@ -22,57 +31,62 @@ static const char* fShader = "                              \n\
 #version 330                                                \n\
 out vec4 color;                                             \n\
 void main()                                                 \n\
-{                                                           \n\
-    color = vec4(1.0f, 1.0f, 1.0f, 1.0f);                   \n\
-}";
+{color = vec4(1.0f, 1.0f, 1.0f, 1.0f);}";
 
+// CAMBIO 4: --------------------------------------------------
 void CrearTriangulo()
 {
+    // Como estamos en 2D el ultimo valor (Z) 
+    // lo dejamos siempre en 0 ----     X,Y,Z
     GLfloat vertices[] = {
-        // Como estamos en 2D el ultimo valor (Z) 
-        // lo dejamos siempre en 0 ----     X,Y,Z
-        
-        //ROMBO: Conformado por dos triángulos
-        // Triángulo de arriba
-        -0.8f,  0.0f,  0.0f,  // Izq
-        -0.5f,  0.45f, 0.0f,  // Arriba
-        -0.2f,  0.0f,  0.0f,  // Der
-        // Triángulo de abajo
-        -0.8f,  0.0f,  0.0f,  // Izq
-        -0.5f, -0.45f, 0.0f,  // Abajo
-        -0.2f,  0.0f,  0.0f,  // Der
 
-        //TRAPECIO: Conformado por 4 triángulos 
-        //  (2 para el rectángulo central 
-        //  y 1 para cada triángulo lateral
-        // Rectángulo central (2 triángulos)
-            //Izquierdo
-        0.0f, -0.2f, 0.0f,    
-        0.4f, -0.2f, 0.0f,    
-        0.0f, 0.3f, 0.0f,
-            //Derecho
-        0.0f,  0.3f, 0.0f,    
-        0.4f, -0.2f, 0.0f,    
-        0.4f, 0.3f, 0.0f,
-        // Triángulo izquierdo
-        -0.2f, -0.2f, 0.0f,    
-        0.0f, -0.2f, 0.0f,    
-        0.0f, 0.3f, 0.0f,
-        // Triángulo derecho
-        0.4f, -0.2f, 0.0f,    
-        0.6f, -0.2f, 0.0f,    
-        0.4f, 0.3f, 0.0f
+        // LETRA E (Conformada por 8 triángulos):
+        // Rectangulo vertical
+        -0.6f,  0.3f, 0.0f,     -0.6f, -0.2f, 0.0f,     -0.5f, -0.2f, 0.0f, //Triangulo 1
+        -0.6f,  0.3f, 0.0f,     -0.5f, -0.2f, 0.0f,     -0.5f, 0.3f, 0.0f,  //Triangulo 2
+        // Rectangulo superior
+        -0.5f, 0.3f, 0.0f,      -0.5f, 0.2f, 0.0f,      -0.3f, 0.2f, 0.0f,  //Triangulo 3
+        -0.5f, 0.3f, 0.0f,      -0.3f, 0.2f, 0.0f,      -0.3f, 0.3f, 0.0f,  //Triangulo 4
+        // Rectangulo medio
+        -0.5f, 0.1f, 0.0f,      -0.5f, 0.0f, 0.0f,      -0.4f, 0.0f, 0.0f,  //Triangulo 5
+        -0.5f, 0.1f, 0.0f,      -0.4f, 0.0f, 0.0f,      -0.4f, 0.1f, 0.0f,  //Triangulo 6
+		// Rectangulo inferior
+        -0.5f, -0.1f, 0.0f,     -0.5f, -0.2f, 0.0f,     -0.3f, -0.2f, 0.0f, //Triangulo 7
+        -0.5f, -0.1f, 0.0f,     -0.3f, -0.2f, 0.0f,     -0.3f, -0.1f, 0.0f, //Triangulo 8
+
+        // LETRA C (Conformada por 6 triángulos):
+        // Rectangulo vertical
+        -0.2f,  0.3f, 0.0f,     -0.2f, -0.2f, 0.0f,     -0.1f, -0.2f, 0.0f, //Triangulo 1
+        -0.2f,  0.3f, 0.0f,     -0.1f, -0.2f, 0.0f,     -0.1f, 0.3f, 0.0f,  //Triangulo 2
+        // Rectangulo superior
+        -0.1f, 0.3f, 0.0f,      -0.1f, 0.2f, 0.0f,      0.1f, 0.2f, 0.0f,   //Triangulo 3
+        -0.1f, 0.3f, 0.0f,      0.1f, 0.2f, 0.0f,       0.1f, 0.3f, 0.0f,   //Triangulo 4
+        // Rectangulo inferior
+        -0.1f, -0.1f, 0.0f,     -0.1f, -0.2f, 0.0f,     0.1f, -0.2f, 0.0f,  //Triangulo 5
+        -0.1f, -0.1f, 0.0f,     0.1f, -0.2f, 0.0f,      0.1f, -0.1f, 0.0f,  //Triangulo 6
+
+        // LETRA M (Conformada por 8 triángulos):
+        //Rectangulo vertical izquierdo
+        0.2f,  0.3f, 0.0f,      0.2f, -0.2f, 0.0f,      0.3f, -0.2f, 0.0f,  //Triangulo 1
+        0.2f,  0.3f, 0.0f,      0.3f, -0.2f, 0.0f,      0.3f, 0.3f, 0.0f,   //Triangulo 2
+        //Rectangulo vertical derecho
+        0.5f,  0.3f, 0.0f,      0.5f, -0.2f, 0.0f,      0.6f, -0.2f, 0.0f,  //Triangulo 3
+        0.5f,  0.3f, 0.0f,      0.6f, -0.2f, 0.0f,      0.6f, 0.3f, 0.0f,   //Triangulo 4
+        // Diagonales
+        0.3f, 0.3f, 0.0f,       0.4f, 0.2f, 0.0f,       0.3f, 0.1f, 0.0f,   //Triangulo 5
+        0.3f, 0.1f, 0.0f,       0.4f, 0.2f, 0.0f,       0.4f, 0.0f, 0.0f,   //Triangulo 6
+        0.5f, 0.3f, 0.0f,       0.4f, 0.2f, 0.0f,       0.5f, 0.1f, 0.0f,   //Triangulo 7
+        0.5f, 0.1f, 0.0f,       0.4f, 0.2f, 0.0f,       0.4f, 0.0f, 0.0f   //Triangulo 8
+        // ----------------------------------------------------
     };
+        
 
     glGenVertexArrays(1, &VAO);     //generar 1 VAO
     glBindVertexArray(VAO);         //asignar VAO
-
     glGenBuffers(1, &VBO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
     //pasarle los datos al VBO asignando tamano, los datos y en este caso es est tico pues no se modificar n los valores
-
-
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GL_FLOAT), (GLvoid*)0);
     //Stride en caso de haber datos de color por ejemplo, es saltar cierta cantidad de datos
     glEnableVertexAttribArray(0);
@@ -82,18 +96,17 @@ void CrearTriangulo()
 }
 
 
-void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType) //Funci n para agregar los shaders a la tarjeta gr fica
-
-//the Program recibe los datos de theShader
-
+void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType) 
+//Función para agregar los shaders a la tarjeta gráfica 
+// the Program recibe los datos de theShader
 {
-    GLuint theShader = glCreateShader(shaderType);//theShader es un shader que se crea de acuerdo al tipo de shader: vertex o fragment
+    GLuint theShader = glCreateShader(shaderType);  //theShader es un shader que se crea de acuerdo al tipo de shader: vertex o fragment
     const GLchar* theCode[1];
-    theCode[0] = shaderCode;//shaderCode es el texto que se le pasa a theCode
+    theCode[0] = shaderCode;                        //shaderCode es el texto que se le pasa a theCode
     GLint codeLength[1];
-    codeLength[0] = strlen(shaderCode);//longitud del texto
+    codeLength[0] = strlen(shaderCode);             //longitud del texto
     glShaderSource(theShader, 1, theCode, codeLength);//Se le asigna al shader el c digo
-    glCompileShader(theShader);//Se comila el shader
+    glCompileShader(theShader);                     //Se comila el shader
     GLint result = 0;
     GLchar eLog[1024] = { 0 };
     //verificaciones y prevenci n de errores
@@ -137,16 +150,18 @@ void CompileShaders() {
         printf("EL error al validar es: %s \n", eLog);
         return;
     }
-
-
-
 }
 
 int main()
 {
+    // CAMBIO 2: ----------------------------------------------
+    // Inicializar semilla aleatoria
+    srand(static_cast<unsigned int>(time(0)));
+    //---------------------------------------------------------
+
     //Inicialización de GLFW
     if (!glfwInit()) return 1;
-    //****  LAS SIGUIENTES 4 L NEAS SE COMENTAN EN DADO CASO DE QUE AL USUARIO NO LE FUNCIONE LA VENTANA Y PUEDA CONOCER LA VERSI N DE OPENGL QUE TIENE ****/
+    //****  LAS SIGUIENTES 4 L NEAS SE COMENTAN EN DADO CASO DE QUE AL USUARIO NO LE FUNCIONE LA VENTANA Y PUEDA CONOCER LA VERSIÓN DE OPENGL QUE TIENE ****/
     //Asignando variables de GLFW y propiedades de ventana
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -182,49 +197,44 @@ int main()
     // Asignar valores de la ventana y coordenadas
     //Asignar Viewport
     glViewport(0, 0, BufferWidth, BufferHeight);
-
     //Llamada a las funciones creadas antes del main
     CrearTriangulo();
     CompileShaders();
 
-    // Controladores de tiempo para cambiar el color cada 1.5 segundos
-    float tiempoAnterior = 0.0f;
-    int indiceColor = 0;
-    float colores[3][3] = {
-        {1.0f, 0.0f, 0.0f}, // Rojo
-        {0.0f, 1.0f, 0.0f}, // Verde
-        {0.0f, 0.0f, 1.0f}  // Azul
-    };
+ 
 
     //Loop mientras no se cierra la ventana
     while (!glfwWindowShouldClose(mainWindow))
     {
         //Recibir eventos del usuario
         glfwPollEvents();
-
+        // Cambio 3: ------------------------------------------
+        // Control del tiempo para el cambio de color (cada 2.0 segundos)
         float tiempoActual = (float)glfwGetTime();
-        if (tiempoActual - tiempoAnterior >= 1.5f) {
-            indiceColor = (indiceColor + 1) % 3;
+        if (tiempoActual - tiempoAnterior >= 2.0f)
+        {
+            // Generar numeros para el RGB de forma aleatoria
+            r = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
+            g = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
+            b = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
             tiempoAnterior = tiempoActual;
         }
-
-        //Limpiar la ventana
-        glClearColor(colores[indiceColor][0], colores[indiceColor][1], colores[indiceColor][2], 1.0f);
+        // Limpiar la ventana con el nuevo color aleatorio
+        glClearColor(r, g, b, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+        // ----------------------------------------------------
 
         glUseProgram(shader);
         glBindVertexArray(VAO);
 
-        // DIBUJAR: Ahora son 18 vértices en total (6 del rombo + 12 del trapecio)
-        glDrawArrays(GL_TRIANGLES, 0, 18);
-
+        // Cambio 5: ------------------------------------------
+        // DIBUJAR: Ahora son 66 vértices en total (8+8+6 = 22  -> 22*3 = 66)
+        glDrawArrays(GL_TRIANGLES, 0, 66);
+        // ----------------------------------------------------
         glBindVertexArray(0);
         glUseProgram(0);
-
         glfwSwapBuffers(mainWindow);
         //NO ESCRIBIR NINGUNA LINEA DESPUES DE glfwSwapBuffers(mainWindow); 
-
     }
-
     return 0;
 }
