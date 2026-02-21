@@ -399,3 +399,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+!E02-317314975_\[EJECUTABLE\]/*.exe
+!E02-317314975_\[EJECUTABLE\]/*.pdb
+!E02-317314975_\[EJECUTABLE\]/*.dll
