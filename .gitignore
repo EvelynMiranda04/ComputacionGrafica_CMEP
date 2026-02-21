@@ -399,3 +399,11 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Pases VIP para la entrega
+!E01-317314975_\[EJECUTABLE\]/*.exe
+!E01-317314975_\[EJECUTABLE\]/*.pdb
+!E01-317314975_\[EJECUTABLE\]/*.dll
+!P01-317314975_\[EJECUTABLE\]/*.exe
+!P01-317314975_\[EJECUTABLE\]/*.pdb
+!P01-317314975_\[EJECUTABLE\]/*.dll
