@@ -399,3 +399,12 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Pases VIP para Práctica 4
+!E04-317314975_\[EJECUTABLE\]/*.exe
+!E04-317314975_\[EJECUTABLE\]/*.pdb
+!E04-317314975_\[EJECUTABLE\]/*.dll
+
+!P04-317314975_\[EJECUTABLE\]/*.exe
+!P04-317314975_\[EJECUTABLE\]/*.pdb
+!P04-317314975_\[EJECUTABLE\]/*.dll
