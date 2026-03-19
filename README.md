@@ -18,11 +18,11 @@
 Este repositorio contiene el progreso semanal de la materia, organizado por ramas:
 
 * **main:** Carátula y datos generales.
-* **Práctica 1:** Completada
-* **Práctica 2:** Completada
-* **Práctica 3:** Completada
-* **Práctica 4:** Completada
-* **Práctica 5:** En proceso...
+* **Práctica 1:** Introducción a OpenGL [Completada]
+* **Práctica 2:** Transformaciones Geométricas [Completada]
+* **Práctica 3:** Modelado Geométrico [Completada]
+* **Práctica 4:** Modelado Jerárquico [Completada]
+* **Práctica 5:** Optimización y Carga de Modelos [Completada]
 * **Práctica 6:** En proceso...
 * **Práctica 7:** En proceso...
 * **Práctica 8:** En proceso...
