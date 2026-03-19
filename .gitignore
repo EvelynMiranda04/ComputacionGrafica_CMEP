@@ -401,11 +401,22 @@ FodyWeavers.xsd
 *.sln.iml
 
 
-# Pases VIP para la nueva estructura de la Práctica 5
+# Pases VIP para Modelos y Texturas (Ejercicio y Actividad)
+!*.obj
+!*.mtl
+!*.jpg
+!*.png
+!*.tga
+!*.bmp
+
+# Asegurar que las carpetas de modelos no se ignoren
+!E05-317314975[Archivos-Reporte]/Modelos/
+!P05-317314975[Modelos]/
+
+# Re-confirmar Ejecutables con la nueva sintaxis (por si acaso)
 !E05-317314975\[Ejecutable\]/*.exe
 !E05-317314975\[Ejecutable\]/*.pdb
 !E05-317314975\[Ejecutable\]/*.dll
-
 !P05-317314975\[Ejecutable\]/*.exe
 !P05-317314975\[Ejecutable\]/*.pdb
 !P05-317314975\[Ejecutable\]/*.dll
