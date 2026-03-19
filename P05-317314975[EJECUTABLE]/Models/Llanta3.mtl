@@ -1,0 +1,46 @@
+# Blender 5.0.1 MTL File: 'None'
+# www.blender.org
+
+newmtl caliper
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Shared_Car_CaliperMuscleTraffic_Diffuse_Red.png
+map_d C:/Shared_Car_CaliperMuscleTraffic_Diffuse_Red.png
+map_Bump -bm 1.000000 C:/Shared_Car_CaliperMuscleTraffic_N.png
+
+newmtl disk
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Shared_Car_DiscForgedSolid_D.png
+map_d C:/Shared_Car_DiscForgedSolid_D.png
+map_Bump -bm 1.000000 C:/Shared_Car_DiscForgedSolid_N.png
+
+newmtl rims
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 2
+map_Kd C:/Car_AlfaRomeo_GTA_1965_Rim_D.png
+map_d C:/Car_AlfaRomeo_GTA_1965_Rim_D.png
+map_Bump -bm 1.000000 C:/Car_AlfaRomeo_GTA_1965_Rim_N.png
+
+newmtl tire
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.006993 0.006993 0.006993
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Bump -bm 1.000000 C:/Shared_Car_Tire_Sport_N.png

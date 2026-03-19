@@ -399,3 +399,13 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
+# Pases VIP para la nueva estructura de la Práctica 5
+!E05-317314975\[Ejecutable\]/*.exe
+!E05-317314975\[Ejecutable\]/*.pdb
+!E05-317314975\[Ejecutable\]/*.dll
+
+!P05-317314975\[Ejecutable\]/*.exe
+!P05-317314975\[Ejecutable\]/*.pdb
+!P05-317314975\[Ejecutable\]/*.dll
