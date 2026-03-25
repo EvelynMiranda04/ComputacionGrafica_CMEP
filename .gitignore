@@ -399,3 +399,26 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# --- PASES VIP PRÁCTICA 6 ---
+
+# 1. Permitir todas las extensiones de modelos y texturas
+!*.obj
+!*.mtl
+!*.tga
+!*.jpg
+!*.png
+!*.bmp
+
+# 2. Desbloquear las carpetas específicas de modelos de la P6
+!E06-317314975\[Archivos-Reporte\]/Modelos/
+!P06-317314975\[Modelos\]/
+
+# 3. Pases VIP para los ejecutables y librerías
+!E06-317314975\[Ejecutable\]/*.exe
+!E06-317314975\[Ejecutable\]/*.pdb
+!E06-317314975\[Ejecutable\]/*.dll
+
+!P06-317314975\[Ejecutable\]/*.exe
+!P06-317314975\[Ejecutable\]/*.pdb
+!P06-317314975\[Ejecutable\]/*.dll
