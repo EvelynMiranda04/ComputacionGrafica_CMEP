@@ -25,7 +25,7 @@ Este repositorio contiene el progreso semanal de la materia, organizado por rama
 * **Práctica 5:** Optimización y Carga de Modelos [Completada]
 * **Práctica 6:** Texturizado [Completada]
 * **Práctica 7:** Iluminación 1 [Completada]
-* **Práctica 8:** En proceso...
+* **Práctica 8:** Iluminación 2 [Completada]
 * **Práctica 9:** En proceso...
 
 ---
