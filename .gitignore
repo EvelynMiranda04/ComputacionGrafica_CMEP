@@ -399,3 +399,26 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# --- PASES VIP PRÁCTICA 8 ---
+
+# 1. Permitir todas las extensiones de modelos y texturas
+!*.obj
+!*.mtl
+!*.tga
+!*.jpg
+!*.png
+!*.bmp
+
+# 2. Desbloquear las carpetas de Archivos-Reporte por si metes modelos ahí
+!E08-317314975\[Archivos-Reporte\]/Modelos/
+!P08-317314975\[Archivos-Reporte\]/Modelos/
+
+# 3. Pases VIP para los ejecutables y librerías
+!E08-317314975\[EJECUTABLE\]/*.exe
+!E08-317314975\[EJECUTABLE\]/*.pdb
+!E08-317314975\[EJECUTABLE\]/*.dll
+
+!P08-317314975\[EJECUTABLE\]/*.exe
+!P08-317314975\[EJECUTABLE\]/*.pdb
+!P08-317314975\[EJECUTABLE\]/*.dll
