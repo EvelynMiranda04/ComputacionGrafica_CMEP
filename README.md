@@ -26,7 +26,6 @@ Este repositorio contiene el progreso semanal de la materia, organizado por rama
 * **Práctica 6:** Texturizado [Completada]
 * **Práctica 7:** Iluminación 1 [Completada]
 * **Práctica 8:** Iluminación 2 [Completada]
-* **Práctica 9:** En proceso...
-
+* **Práctica 9:** Animación Básica [Completada]
 ---
 > *Repositorio creado para fines académicos - Facultad de Ingeniería 2026.*
