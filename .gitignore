@@ -411,7 +411,7 @@ FodyWeavers.xsd
 !*.png
 
 # 2. Desbloquear carpetas del Ejercicio 9.2
-!E09.2-317314975\[Archivos-Reporte\]/Modelos/
-!E09.2-317314975\[EJECUTABLE\]/*.exe
-!E09.2-317314975\[EJECUTABLE\]/*.pdb
-!E09.2-317314975\[EJECUTABLE\]/*.dll
+!E09_2-317314975\[Archivos-Reporte\]/Modelos/
+!E09_2-317314975\[EJECUTABLE\]/*.exe
+!E09_2-317314975\[EJECUTABLE\]/*.pdb
+!E09_2-317314975\[EJECUTABLE\]/*.dll
