@@ -400,24 +400,33 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# --- PASES VIP PRÁCTICA 9.2 ---
+# --- PASES VIP PRÁCTICA 9.1 y 9.2 ---
 
-# 1. Permitir videos MP4 y recursos de modelos
+# 1. Permitir videos MP4 y recursos de modelos/texturas
 !*.mp4
 !*.obj
 !*.mtl
 !*.tga
 !*.jpg
 !*.png
+!*.bmp
 
-# 2. Desbloquear carpetas del Ejercicio 9.2
+# 2. Desbloquear carpetas de Modelos (por si las metes en Archivos-Reporte)
 !E09_2-317314975\[Archivos-Reporte\]/Modelos/
+!P09_2-317314975\[Archivos-Reporte\]/Modelos/
+
+# 3. Pases VIP para el Ejercicio 9.2
 !E09_2-317314975\[EJECUTABLE\]/*.exe
 !E09_2-317314975\[EJECUTABLE\]/*.pdb
 !E09_2-317314975\[EJECUTABLE\]/*.dll
-!P09_1-317314975[EJECUTABLE_y_OtrosArchivos]/*.exe
-!P09_1-317314975[EJECUTABLE_y_OtrosArchivos]/*.pdb
-!P09_1-317314975[EJECUTABLE_y_OtrosArchivos]/*.dll
-!P09_2-317314975[EJECUTABLE]/*.exe
-!P09_2-317314975[EJECUTABLE]/*.pdb
-!P09_2-317314975[EJECUTABLE]/*.dll
+
+# 4. Pases VIP para la Práctica 9.1 
+# (Ajusta la palabra "OtrosArchivos" si tu carpeta se llama un poco diferente)
+!P09_1-317314975\[EJECUTABLE_y_OtrosArchivos\]/*.exe
+!P09_1-317314975\[EJECUTABLE_y_OtrosArchivos\]/*.pdb
+!P09_1-317314975\[EJECUTABLE_y_OtrosArchivos\]/*.dll
+
+# 5. Pases VIP para la Práctica 9.2
+!P09_2-317314975\[EJECUTABLE\]/*.exe
+!P09_2-317314975\[EJECUTABLE\]/*.pdb
+!P09_2-317314975\[EJECUTABLE\]/*.dll
