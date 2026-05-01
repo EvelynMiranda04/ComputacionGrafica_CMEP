@@ -18,16 +18,16 @@
 Este repositorio contiene el progreso semanal de la materia, organizado por ramas:
 
 * **main:** Carátula y datos generales.
-* **Práctica 1:** Introducción a OpenGL [Completada]
-* **Práctica 2:** Transformaciones Geométricas [Completada]
-* **Práctica 3:** Modelado Geométrico [Completada]
-* **Práctica 4:** Modelado Jerárquico [Completada]
-* **Práctica 5:** Optimización y Carga de Modelos [Completada]
-* **Práctica 6:** Texturizado [Completada]
-* **Práctica 7:** Iluminación 1 [Completada]
-* **Práctica 8:** Iluminación 2 [Completada]
-* **Práctica 9.1:** Animación Básica [Completada]
-* **Práctica 9.2:** Animación Avanzada y Textura Animada [Completada]
-* **Práctica 9.1:** Animación por keyframes... En proceso
+* **Práctica 1:** Introducción a OpenGL             [Completada]
+* **Práctica 2:** Transformaciones Geométricas      [Completada]
+* **Práctica 3:** Modelado Geométrico               [Completada]
+* **Práctica 4:** Modelado Jerárquico               [Completada]
+* **Práctica 5:** Optimización y Carga de Modelos   [Completada]
+* **Práctica 6:** Texturizado                       [Completada]
+* **Práctica 7:** Iluminación 1                     [Completada]
+* **Práctica 8:** Iluminación 2                     [Completada]
+* **Práctica 9.1:** Animación Básica                [Completada]
+* **Práctica 9.2:** Animación Avanzada              [Completada]
+* **Práctica 10:** Animación por keyframes... En proceso
 ---
 > *Repositorio creado para fines académicos - Facultad de Ingeniería 2026.*
