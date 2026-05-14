@@ -28,6 +28,6 @@ Este repositorio contiene el progreso semanal de la materia, organizado por rama
 * **Práctica 8:** Iluminación 2                     [Completada]
 * **Práctica 9.1:** Animación Básica                [Completada]
 * **Práctica 9.2:** Animación Avanzada              [Completada]
-* **Práctica 10:** Animación por keyframes... En proceso
+* **Práctica 10:** Animación por keyframe           [Completada] 
 ---
 > *Repositorio creado para fines académicos - Facultad de Ingeniería 2026.*
