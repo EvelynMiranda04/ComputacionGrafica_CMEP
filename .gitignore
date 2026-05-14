@@ -399,3 +399,23 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
+# --- PASES VIP PRÁCTICA 10 ---
+
+# 1. Permitir videos MP4 y recursos de modelos/texturas
+!*.mp4
+!*.obj
+!*.mtl
+!*.tga
+!*.jpg
+!*.png
+!*.bmp
+
+# 2. Desbloquear carpetas de Modelos dentro de Archivos-Reporte
+!P10-317314975\[Archivos-Reporte\]/Modelos/
+
+# 3. Pases VIP para la Actividad 10
+!P10-317314975\[EJECUTABLE\]/*.exe
+!P10-317314975\[EJECUTABLE\]/*.pdb
+!P10-317314975\[EJECUTABLE\]/*.dll
